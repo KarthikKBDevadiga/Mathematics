@@ -1,0 +1,383 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.7,user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#9FA8DA">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9FA8DA">
+		<link rel="shortcut icon" href="images/rcu.svg">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/loading.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/bg-anim.css">
+		<link rel="stylesheet" type="text/css" href="css/btn-go.css">
+		<link rel="stylesheet" type="text/css" href="css/svg_animation.css">
+		<link rel="stylesheet" type="text/css" href="css/controller.css">
+		<link rel="stylesheet" type="text/css" href="css/ripple.css">
+		<title>Period 1</title>
+	</head>
+	<body >
+		<div id="loader" class="loader" style="width: 100%;height: 100%;
+			background: linear-gradient(to top, #4e54c8, #8f94fb);">
+			<svg class="loading" viewBox="-2000 -1000 4000 2000"  id="loader_icon">
+				<path id="inf" d="M354-354A500 500 0 1 1 354 354L-354-354A500 500 0 1 0-354 354z"></path>
+				<use xlink:href="#inf" stroke-dasharray="1570 5143" stroke-dashoffset="6713px"></use>
+			</svg>
+		</div>
+		<div id="container" class="container" style="display: none;">
+			<div class="progress">
+				<div id="completed" class="progress-bar" style="width: 0%;"></div>
+			</div>
+			<img class="logo" src="images/logo.svg" id="logo">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<audio id="period_1_audio">
+				<source type="type/mp3">
+			</audio>
+			<div class="mainBody" id="one" style="display: block;">
+				<p id="period_1" style="top: 35%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">PERIOD 1
+				</p>
+				<p id="unit_1" style="top: 50%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">UNIT 1 – EXPONENTS AND POWER
+				</p>
+				<div id="wrapper" class="my-super-cool-btn" onclick="startUnit1(this)">
+					<div class="dots-container">
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+					</div>
+					<span style="font-size: 35px;">START</span>
+				</div>
+			</div>
+			<div class="mainBody" id="two" style="display: none;">
+				<p id="introduction_title" style="top: 50%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 1;">
+				</p>
+				<p id="introduction_content" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;">
+				</p>
+			</div>
+			<div class="mainBody" id="example_1" style="display: none;padding: 30px;">
+				<p id="example_1_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Example 1</p>
+				<div class="center" style="top: 40%;">
+					<div id="loe_e_1_b_1" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;    margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">5<sup>6</sup> × 5<sup>-4</sup></div>
+					<div id="loe_e_1_a_1" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="loe_e_1_b_2" style="display:flex;color:white;border: 2px solid white;border-radius: 5px;width: 400px;height:40px;text-align: center;opacity: 0;">
+						<div id="loe_e_1_b_2_1" style="width: 40px;height: 36px;border-radius: 3px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_2" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_3" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_4" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_5" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_6" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_7" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_8" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_9" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">5</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_1_b_2_10" style="width: 40px;height: 36px;border-radius: 3px;background:rgba(0,0,255,0.3);">5</div>
+					</div>
+				</div>
+				<div class="center" style="top: 70%;">
+					<div id="loe_e_1_b_3" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">5<sup>6 - 4</sup></div>
+					<div id="loe_e_1_a_2" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="loe_e_1_b_4" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;" >
+						5<sup>2</sup>
+					</div>
+				</div>
+			</div>
+			<div class="mainBody" id="example_2" style="display: none;padding: 30px;">
+				<p id="example_2_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Example 2</p>
+				<div class="center" style="top: 40%;">
+					<div id="loe_e_2_b_1" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;    margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">a<sup>3</sup> × a<sup>4</sup></div>
+					<div id="loe_e_2_a_1" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="loe_e_2_b_2" style="display:flex;color:white;border: 2px solid white;border-radius: 5px;width: 280px;height:40px;text-align: center;opacity: 0;">
+						<div id="loe_e_2_b_2_1" style="width: 40px;height: 36px;border-radius: 3px;background: rgba(0,0,255,0.3);">a</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_2_b_2_2" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">a</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_2_b_2_3" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">a</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_2_b_2_4" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">a</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_2_b_2_5" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">a</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_2_b_2_6" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">a</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_2_b_2_7" style="width: 40px;height: 36px;border-radius: 3px;background:rgba(0,0,255,0.3);">a</div>
+					</div>
+				</div>
+				<div class="center" style="top: 70%;">
+					<div id="loe_e_2_b_3" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">a<sup>3 + 4</sup></div>
+					<div id="loe_e_2_a_2" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="loe_e_2_b_4" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;" >
+						a<sup>7</sup>
+					</div>
+				</div>
+			</div>
+			<div class="mainBody" id="example_3" style="display: none;padding: 30px;">
+				<p id="example_3_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Example 3</p>
+				<div class="center" style="top: 40%;">
+					<div id="loe_e_3_b_1" style="color:white;border: 2px solid white;border-radius: 5px;width: 250px;height:40px;text-align: center; margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">( - m)<sup>3</sup> × ( - m)<sup>2</sup> × ( - m)<sup>3</sup> </div>
+					<div id="loe_e_3_a_1" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="loe_e_3_b_2" style="display:flex;color:white;border: 2px solid white;border-radius: 5px;width: 320px;height:40px;text-align: center;opacity: 0;">
+						<div id="loe_e_3_b_2_1" style="width: 40px;height: 36px;border-radius: 3px;background: rgba(0,0,255,0.3);">-m</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_3_b_2_2" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">-m</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_3_b_2_3" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">-m</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_3_b_2_4" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">-m</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_3_b_2_5" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">-m</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_3_b_2_6" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">-m</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_3_b_2_7" style="width: 40px;height: 36px;background: rgba(0,0,255,0.3);">-m</div>
+						<div style="height: 100%; width:2px;background: white;"></div>
+						<div id="loe_e_3_b_2_8" style="width: 40px;height: 36px;border-radius: 3px;background:rgba(0,0,255,0.3);">-m</div>
+					</div>
+				</div>
+				<div class="center" style="top: 70%;">
+					<div id="loe_e_3_b_3" style="color:white;border: 2px solid white;border-radius: 5px;width: 130px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">( - m)<sup>3 + 2 +3</sup></div>
+					<div id="loe_e_3_a_2" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="loe_e_3_b_4" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;" >
+						m<sup>8</sup>
+					</div>
+				</div>
+			</div>
+
+			<div class="mainBody" id="exercise_1" style="display: none;padding: 30px;">
+				<p id="exercise_1_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 1</p>
+				<div class="center" style="top: 55%;">
+					<div id="exercise_1_b_1" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;    margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">a<sup>3</sup> × a<sup>3</sup></div>
+					<div id="exercise_1_a_1" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_1_b_2" style="margin-left:40px;display:flex;color:white;height:40px;text-align: center;opacity: 0;">
+						<input id="exercise_1_b_2_1" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" >
+						<input id="exercise_1_b_2_2" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_1_b_2_3" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_1_b_2_4" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_1_b_2_5" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_1_b_2_6" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<div id="exercise_1_b_2_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<div id="exercise_1_a_2" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_1_b_3" style="margin-left:110px;display:flex;color:white;width:140px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_1_b_3" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">a 
+							<input maxlength="3" id="exercise_1_b_3_1" style="height: 20px;width: 30px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						
+						<div id="exercise_1_b_3_result" style="width: 40px;height: 40px;"></div>
+					</div>
+
+					<div id="exercise_1_a_3" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_1_b_4" style="margin-left:110px;display:flex;color:white;width:140px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_1_b_4" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">a 
+							<input maxlength="1" id="exercise_1_b_4_1" style="height: 20px;width: 20px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						<div id="exercise_1_b_4_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<button type="button" class="btn btn-primary" style="margin-top: 20px;font-size: inherit;" onclick="evaluateExercize1()">Evaluate</button>
+				</div>
+			</div>
+
+			<div class="mainBody" id="exercise_2" style="display: none;padding: 30px;">
+				<p id="exercise_2_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 2</p>
+				<div class="center" style="top: 55%;">
+					<div id="exercise_2_b_1" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;    margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">m<sup>4</sup> × m<sup>4</sup></div>
+					<div id="exercise_2_a_1" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_2_b_2" style="margin-left:40px;display:flex;color:white;height:40px;text-align: center;opacity: 0;">
+						<input id="exercise_2_b_2_1" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" >
+						<input id="exercise_2_b_2_2" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_2_b_2_3" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_2_b_2_4" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_2_b_2_5" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_2_b_2_6" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_2_b_2_7" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_2_b_2_8" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<div id="exercise_2_b_2_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<div id="exercise_2_a_2" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_2_b_3" style="margin-left:150px;display:flex;color:white;width:140px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_2_b_3" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">m 
+							<input maxlength="3" id="exercise_2_b_3_1" style="height: 20px;width: 30px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						
+						<div id="exercise_2_b_3_result" style="width: 40px;height: 40px;"></div>
+					</div>
+
+					<div id="exercise_2_a_3" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_2_b_4" style="margin-left:150px;display:flex;color:white;width:140px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_2_b_4" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">m 
+							<input maxlength="1" id="exercise_2_b_4_1" style="height: 20px;width: 20px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						<div id="exercise_2_b_4_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<button type="button" class="btn btn-primary" style="margin-top: 20px;font-size: inherit;" onclick="evaluateExercize2()">Evaluate</button>
+				</div>
+			</div>
+			
+			<div class="mainBody" id="exercise_3" style="display: none;padding: 30px;">
+				<p id="exercise_3_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 3</p>
+				<div class="center" style="top: 55%;">
+					<div id="exercise_3_b_1" style="color:white;border: 2px solid white;border-radius: 5px;width: 200px;height:40px;text-align: center;    margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">(-n)<sup>3</sup> × (-n)<sup>2</sup> × (-n)<sup>3</sup></div>
+					<div id="exercise_3_a_1" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_3_b_2" style="margin-left:40px;display:flex;color:white;height:40px;text-align: center;opacity: 0;">
+						<input id="exercise_3_b_2_1" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="2" >
+						<input id="exercise_3_b_2_2" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="2">
+						<input id="exercise_3_b_2_3" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="2">
+						<input id="exercise_3_b_2_4" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="2">
+						<input id="exercise_3_b_2_5" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="2" >
+						<input id="exercise_3_b_2_6" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="2" >
+						<input id="exercise_3_b_2_7" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="2" >
+						<input id="exercise_3_b_2_8" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="2" >
+						<div id="exercise_3_b_2_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<div id="exercise_3_a_2" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_3_b_3" style="margin-left:115px;display:flex;color:white;width:200px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_3_b_3" style="color:white;border: 2px solid white;border-radius: 5px;width: 200px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">(-n) 
+							<input maxlength="5" id="exercise_3_b_3_1" style="height: 20px;width: 60px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						
+						<div id="exercise_3_b_3_result" style="width: 40px;height: 40px;"></div>
+					</div>
+
+					<div id="exercise_3_a_3" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_3_b_4" style="margin-left:150px;display:flex;color:white;width:140px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_3_b_4" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">n
+							<input maxlength="1" id="exercise_3_b_4_1" style="height: 20px;width: 20px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						<div id="exercise_3_b_4_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<button type="button" class="btn btn-primary" style="margin-top: 20px;font-size: inherit;" onclick="evaluateExercize3()">Evaluate</button>
+				</div>
+			</div>
+
+			<div class="mainBody" id="exercise_4" style="display: none;padding: 30px;">
+				<p id="exercise_4_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 4</p>
+				<div class="center" style="top: 55%;">
+					<div id="exercise_4_b_1" style="color:white;border: 2px solid white;border-radius: 5px;width: 200px;height:40px;text-align: center;    margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">a<sup>3</sup> × a<sup>2</sup> × a<sup>2</sup></div>
+					<div id="exercise_4_a_1" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_4_b_2" style="margin-left:40px;display:flex;color:white;height:40px;text-align: center;opacity: 0;">
+						<input id="exercise_4_b_2_1" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" >
+						<input id="exercise_4_b_2_2" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_4_b_2_3" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_4_b_2_4" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_4_b_2_5" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_4_b_2_6" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_4_b_2_7" style="width: 40px;height: 40px;background:#00FF0066;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<div id="exercise_4_b_2_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<div id="exercise_4_a_2" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_4_b_3" style="margin-left:100px;display:flex;color:white;width:200px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_4_b_3" style="color:white;border: 2px solid white;border-radius: 5px;width: 200px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">a 
+							<input maxlength="5" id="exercise_4_b_3_1" style="height: 20px;width: 60px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						
+						<div id="exercise_4_b_3_result" style="width: 40px;height: 40px;"></div>
+					</div>
+
+					<div id="exercise_4_a_3" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_4_b_4" style="margin-left:130px;display:flex;color:white;width:140px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_4_b_4" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">a
+							<input maxlength="1" id="exercise_4_b_4_1" style="height: 20px;width: 20px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						<div id="exercise_4_b_4_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<button type="button" class="btn btn-primary" style="margin-top: 20px;font-size: inherit;" onclick="evaluateExercize4()">Evaluate</button>
+				</div>
+			</div>
+
+			<div class="mainBody" id="exercise_5" style="display: none;padding: 30px;">
+				<p id="exercise_5_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 5</p>
+				<div class="center" style="top: 55%;">
+					<div id="exercise_5_b_1" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;    margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);opacity: 0;">m<sup>4</sup> × m<sup>-4</sup></div>
+					<div id="exercise_5_a_1" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_5_b_2" style="margin-left:40px;display:flex;color:white;height:40px;text-align: center;opacity: 0;">
+						<input id="exercise_5_b_2_1" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" >
+						<input id="exercise_5_b_2_2" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_5_b_2_3" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_5_b_2_4" style="width: 40px;height: 40px;background: #00FF0066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1">
+						<input id="exercise_5_b_2_5" style="width: 40px;height: 40px;background:#FF000066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_5_b_2_6" style="width: 40px;height: 40px;background:#FF000066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_5_b_2_7" style="width: 40px;height: 40px;background:#FF000066;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<input id="exercise_5_b_2_8" style="width: 40px;height: 40px;background:#FF000066;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1" >
+						<div id="exercise_5_b_2_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<div id="exercise_5_a_2" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_5_b_3" style="margin-left:150px;display:flex;color:white;width:140px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_5_b_3" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">m 
+							<input maxlength="3" id="exercise_5_b_3_1" style="height: 20px;width: 30px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						
+						<div id="exercise_5_b_3_result" style="width: 40px;height: 40px;"></div>
+					</div>
+
+					<div id="exercise_5_a_3" class="one_headed_arrow play" style="margin-left:auto;margin-right: auto;opacity: 0;"></div>
+					<div id="exercise_5_b_4" style="margin-left:150px;display:flex;color:white;width:140px;height:40px;text-align: center;opacity: 0	;">
+						<div id="exercise_5_b_4" style="color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;margin-left: auto;margin-right: auto;background: rgba(0,0,255,0.3);">m 
+							<input maxlength="1" id="exercise_5_b_4_1" style="height: 20px;width: 20px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+						</div>
+						<div id="exercise_5_b_4_result" style="width: 40px;height: 40px;"></div>
+					</div>
+					<button type="button" class="btn btn-primary" style="margin-top: 20px;font-size: inherit;" onclick="evaluateExercize5()">Evaluate</button>
+				</div>
+			</div>
+
+			<div class="mainBody" id="home_work" style="display: none;">
+				<p id="home_work_title" style="top: 20%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Home work for Students
+				</p>
+				<p id="home_work_questions" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+					i. Solve a<sup>3</sup> × a<sup>3</sup><br>
+					ii. Solve (-x)<sup>3</sup> × (-x)<sup>2</sup> × (-x)<sup>7</sup><br>
+					iii. Solve n<sup>3</sup> × n<sup>-7</sup><br>
+					iv. Solve (-m)<sup>3</sup> × (-m)<sup>5</sup><br>
+				</p>>
+			</div>
+
+			<div class="mainBody" id="end_of_period" style="display: none;padding: 30px;">
+				<p id="end_of_period_title" class="center" style="top: 50%;font-size: xxx-large;opacity: 1;border-top: 2px solid white;border-bottom: 2px solid white;animation: fadeIn 2s;text-align: center;">END OF THE PERIOD</p>
+			</div>
+			<div class="footer">
+				<div id="button">
+					<svg
+						viewBox="0 0 40 40" width="40px" height="40px">
+						<path
+							id="path"
+							d="M 5 20 L 20 5 L 35 20"
+							fill="none"
+							stroke="#FFFFFF"
+							stroke-width="5"
+							stroke-linecap="round"
+							stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div id="container">
+					<div id="cont" style="background: grey;">
+						<div class="footer_center">
+							<h3>Rani Channamma University,<br>Belagavi</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/period1.js"></script>
+
+</html>

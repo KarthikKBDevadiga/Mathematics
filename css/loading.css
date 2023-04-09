@@ -1,0 +1,23 @@
+.loading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 150px;
+	max-width: 25em;
+	fill: none;
+	stroke: #8f94fb;
+	stroke-linecap: round;
+	stroke-width: 5%
+}
+
+use {
+	stroke: #fff;
+	animation: loadingAnimation 1s linear infinite
+}
+
+@keyframes loadingAnimation {
+	to {
+		stroke-dashoffset: 0px
+	}
+}

@@ -1,0 +1,313 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.7,user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#9FA8DA">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9FA8DA">
+		<link rel="shortcut icon" href="images/rcu.svg">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/loading.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/bg-anim.css">
+		<link rel="stylesheet" type="text/css" href="css/btn-go.css">
+		<link rel="stylesheet" type="text/css" href="css/svg_animation.css">
+		<link rel="stylesheet" type="text/css" href="css/controller.css">
+		<link rel="stylesheet" type="text/css" href="css/ripple.css">
+		<title>Period 6</title>
+	</head>
+	<body >
+		<div id="loader" class="loader" style="width: 100%;height: 100%;
+			background: linear-gradient(to top, #4e54c8, #8f94fb);">
+			<svg class="loading" viewBox="-2000 -1000 4000 2000"  id="loader_icon">
+				<path id="inf" d="M354-354A500 500 0 1 1 354 354L-354-354A500 500 0 1 0-354 354z"></path>
+				<use xlink:href="#inf" stroke-dasharray="1570 5143" stroke-dashoffset="6713px"></use>
+			</svg>
+		</div>
+		<div id="container" class="container" style="display: none;">
+			<div class="progress">
+				<div id="completed" class="progress-bar" style="width: 0%;"></div>
+			</div>
+			<img class="logo" src="images/logo.svg" id="logo">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<audio id="period_6_audio">
+				<source type="type/mp3">
+			</audio>
+			<div class="mainBody" id="one" style="display: block;">
+				<div id="wrapper" class="my-super-cool-btn" onclick="startUnit6(this)">
+					<div class="dots-container">
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+					</div>
+					<span style="font-size: 35px;">START</span>
+				</div>
+			</div>
+			<div class="mainBody" id="two" style="display: none;">
+				<p id="title" style="top: 50%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+				</p>
+				<p id="content" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;">
+				</p>
+			</div>
+			<div class="mainBody" id="example_1" style="display: none;">
+				<p id="example_1_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Example 1</p>
+				<p id="example_1_line_1" style="top: 45%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">2 and 3 are factors of 6, since 2 × 3 gives 6.
+				</p>
+				<p id="example_1_line_2" style="top: 60%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">In other words, all the numbers, whose product results in one single number, are said to be the factors of that number.
+				</p>
+			</div>
+			<div class="mainBody" id="example_2" style="display: none;">
+				<p id="example_2_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Example 2</p>
+				<p id="example_2_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">The numbers 1, 2, 3, 4, 6, 12 are the factors of 12.
+				</p>
+				<p id="example_2_line_2" style="top: 45%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Through the bar model</p>
+				<div  style="top: 65%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+					<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input id="example_2_block_3_1_r" style="opacity:0;background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="12">
+						<div id="example_2_block_3_1_a"  class="two_headed_arrow play" style="opacity:0;margin-left:auto;margin-right: auto;"></div>
+						<div id="example_2_block_3_1_l"  style="opacity:0;width: fit-content;margin-left: auto;margin-right: auto;">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="12">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="1">   
+						</div>
+					</div>
+					<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input id="example_2_block_3_2_r" class="" style="opacity:0;background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="12">
+						<div id="example_2_block_3_2_a" class="two_headed_arrow play" style="opacity:0;margin-left:auto;margin-right: auto;"></div>
+						<div id="example_2_block_3_2_l" class="" style="opacity:0;width: fit-content;margin-left: auto;margin-right: auto;">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="6">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="2">   
+						</div>
+					</div>
+					<div style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input id="example_2_block_3_3_r" style="opacity: 0;background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="12">
+						<div id="example_2_block_3_3_a" class="two_headed_arrow play" style="opacity: 0;margin-left:auto;margin-right: auto;"></div>
+						<div id="example_2_block_3_3_l"  style="opacity: 0;width: fit-content;margin-left: auto;margin-right: auto;">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="4">
+							<input  style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="3">   
+						</div>
+					</div>
+				</div>
+				<p id="example_2_line_3" style="top: 85%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">So Factors of 12 are 1, 2, 3, 4, 6 and 12</p>
+			</div>
+			<div class="mainBody" id="example_3" style="display: none;">
+				<p id="example_3_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Example 1</p>
+				<p id="example_3_line_1" style="top: 25%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Prime factor form of 70 is 2, 5, and 7.
+				</p>
+				<p id="example_3_line_2" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">We can teach through bar model</p>
+				<div  style="top: 62%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+					<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input id="example_3_block_1_r_1" style="opacity:0;background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="70">
+						<div id="example_3_block_1_a"  class="two_headed_arrow play" style="opacity:0;margin-left:auto;margin-right: auto;"></div>
+						<div id="example_3_block_1_l"  style="opacity:0;width: fit-content;margin-left: auto;margin-right: auto;">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="7">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="10">   
+						</div>
+						<div id="example_3_block_2_a"  class="two_headed_arrow play" style="opacity:0;margin-left:40px;margin-right: auto;"></div>
+						<div id="example_3_block_2_l"  style="opacity:0;width: 120px;margin-left: 40px;margin-right: auto;">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="2">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="5">
+						</div>
+					</div>
+					
+				</div>
+				<p id="example_3_line_3" style="top: 90%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">So prime factors of 70 are 2,5 and 7</p>
+			</div>
+
+			<div class="mainBody" id="exercise_1" style="display: none;padding: 30px;">
+				<p id="exercise_1_title" class="center" style="opacity:0;top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 1</p>
+				<div id="exercise_1_block" class="center" style="opacity:0;top: 50%;">
+					<div  style="top: 62%;font-size: xx-large;text-align: center;color: white;position: absolute;padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+						<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+							<input  style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="50">
+							<div   class="two_headed_arrow play" style="margin-left:auto;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-left: -40px;margin-right: auto;display: flex;">
+								<div id="exercise_1_block_1_l_1_result" style="width: 40px;height: 40px;/* position: absolute; */"></div>
+								<input id="exercise_1_block_1_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_1_block_1_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_1_block_1_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+							<div   class="two_headed_arrow play" style="margin-left:40px;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-right: auto;display: flex;">
+								<div id="exercise_1_block_2_l_1_result" style="width: 40px;height: 40px;/* position: absolute; */"></div>
+								<input id="exercise_1_block_2_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_1_block_2_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_1_block_2_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercize1()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_2" style="display: none;padding: 30px;">
+				<p id="exercise_2_title" class="center" style="opacity:0;top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 2</p>
+				<div id="exercise_2_block" class="center" style="opacity:0;top: 50%;">
+					<div  style="top: 62%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+						<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+							<input  style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="20">
+							<div   class="two_headed_arrow play" style="margin-left:auto;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-left: -40px;margin-right: auto;display: flex;">
+								<div id="exercise_2_block_1_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_2_block_1_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_2_block_1_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_2_block_1_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+							<div   class="two_headed_arrow play" style="margin-left:40px;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-right: auto;display: flex;">
+								<div id="exercise_2_block_2_l_1_result" style="width: 40px;height: 40px;/* position: absolute; */"></div>
+								<input id="exercise_2_block_2_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_2_block_2_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_2_block_2_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercize2()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_3" style="display: none;padding: 30px;">
+				<p id="exercise_3_title" class="center" style="opacity:0;top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 3</p>
+				<div id="exercise_3_block" class="center" style="opacity:0;top: 50%;">
+					<div  style="top: 62%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+						<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+							<input  style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="30">
+							<div   class="two_headed_arrow play" style="margin-left:auto;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-left: -40px;margin-right: auto;display: flex;">
+								<div id="exercise_3_block_1_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_3_block_1_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_3_block_1_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_3_block_1_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+							<div   class="two_headed_arrow play" style="margin-left:40px;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-right: auto;display: flex;">
+								<div id="exercise_3_block_2_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_3_block_2_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_3_block_2_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_3_block_2_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercize3()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_4" style="display: none;padding: 30px;">
+				<p id="exercise_4_title" class="center" style="opacity:0;top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 4</p>
+				<div id="exercise_4_block" class="center" style="opacity:0;top: 50%;">
+					<div  style="top: 62%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+						<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+							<input  style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="100">
+							<div   class="two_headed_arrow play" style="margin-left:auto;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-left: -40px;margin-right: auto;display: flex;">
+								<div id="exercise_4_block_1_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_4_block_1_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_4_block_1_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_4_block_1_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+							<div   class="two_headed_arrow play" style="margin-left:40px;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-right: auto;display: flex;">
+								<div id="exercise_4_block_2_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_4_block_2_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_4_block_2_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_4_block_2_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+							<div   class="two_headed_arrow play" style="margin-left:80px;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-right: auto;display: flex;margin-left: 40px;">
+								<div id="exercise_4_block_3_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_4_block_3_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_4_block_3_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_4_block_3_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercize4()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_5" style="display: none;padding: 30px;">
+				<p id="exercise_5_title" class="center" style="opacity:0;top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 5</p>
+				<div id="exercise_5_block" class="center" style="opacity:0;top: 50%;">
+					<div  style="top: 62%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+						<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+							<input  style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="90">
+							<div   class="two_headed_arrow play" style="margin-left:auto;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-left: -40px;margin-right: auto;display: flex;">
+								<div id="exercise_5_block_1_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_5_block_1_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_5_block_1_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_5_block_1_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+							<div   class="two_headed_arrow play" style="margin-left:40px;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-right: auto;display: flex;">
+								<div id="exercise_5_block_2_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_5_block_2_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_5_block_2_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_5_block_2_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+							<div   class="two_headed_arrow play" style="margin-left:80px;margin-right: auto;"></div>
+							<div style="width: fit-content;margin-right: auto;display: flex;margin-left: 40px;">
+								<div id="exercise_5_block_3_l_1_result" style="width: 40px;height: 40px;"></div>
+								<input id="exercise_5_block_3_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<input id="exercise_5_block_3_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+								<div id="exercise_5_block_3_l_2_result" style="width: 40px;height: 40px;"></div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercize5()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="home_work" style="display: none;">
+				<p id="home_work_title" style="top: 20%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Home work for Students
+				</p>
+				<p id="home_work_questions" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+					i. Find out the factors of 120<br>
+					ii. Find out the factors of 200<br>
+					iii. Find out the factors of 1000<br>
+					iv. Find out the factors of 300<br>
+				</p>
+				>
+			</div>
+			<div class="mainBody" id="end_of_period" style="display: none;padding: 30px;">
+				<p id="end_of_period_title" class="center" style="top: 50%;font-size: xxx-large;opacity: 1;border-top: 2px solid white;border-bottom: 2px solid white;animation: fadeIn 2s;text-align: center;">END OF THE PERIOD</p>
+			</div>
+			<div class="footer">
+				<div id="button">
+					<svg
+						viewBox="0 0 40 40" width="40px" height="40px">
+						<path
+							id="path"
+							d="M 5 20 L 20 5 L 35 20"
+							fill="none"
+							stroke="#FFFFFF"
+							stroke-width="5"
+							stroke-linecap="round"
+							stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div id="container">
+					<div id="cont" style="background: grey;">
+						<div class="footer_center">
+							<h3>Rani Channamma University,<br>Belagavi</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/period6.js"></script>
+</html>

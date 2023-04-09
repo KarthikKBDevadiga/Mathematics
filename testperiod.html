@@ -1,0 +1,543 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.7,user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#9FA8DA">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9FA8DA">
+		<link rel="shortcut icon" href="images/rcu.svg">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/loading.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/bg-anim.css">
+		<link rel="stylesheet" type="text/css" href="css/btn-go.css">
+		<link rel="stylesheet" type="text/css" href="css/svg_animation.css">
+		<link rel="stylesheet" type="text/css" href="css/controller.css">
+		<link rel="stylesheet" type="text/css" href="css/ripple.css">
+		<title>Period 3</title>
+		<style type="text/css">
+    .menu-outer:hover ~ .menu-close {
+  margin-right:-100px;
+}
+.menu-outer:hover .bar { background:rgba(100,200,240,.9); }
+.menu-inner ul {
+  top:50%;
+  -webkit-transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  -o-transform:translateY(-50%);
+  transform:translateY(-50%);
+}
+html, body {
+  background: rgba(20,20,20,1);
+}
+.menu-outer {
+  
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  font-family: 'Montserrat', serif;
+  z-index: 998;  
+  width: 100%;
+  left: 100%;
+  margin-left: -100px;
+  height: 200%;
+  background: rgba(100,200,240,.9);  
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s; 
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.menu-outer:hover {
+  background: rgba(100,200,240,.98);
+  left: 0;
+  margin-left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.menu-icon {
+  z-index: 999;
+  position: absolute;
+  top: 58px;
+  left: 15px;
+  width: 30px;
+  pointer-events: none;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+.menu-icon .bar {
+  background: rgba(250,250,250,1);
+  width: 100%;
+  height: 5px;
+  margin: 0 0 5px;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+.menu-outer:hover > .menu-icon {
+  opacity: 0;
+}
+nav ul {
+  position:absolute;
+  width:100%;
+  padding: 0;
+  left: 10%;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+.menu-outer:hover > nav ul {
+  left: 0;
+}
+nav li {
+  list-style:none;
+  text-align: center;
+  text-transform: uppercase;
+}
+nav li a {
+  font-size: 2em;
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 20px;
+  display:block;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+nav li a:hover {
+  color: rgba(255,255,255,1);
+}
+@media screen and (max-width: 600px), screen and (max-height: 600px) {
+  nav ul {font-size:.75em;}
+  nav ul a {padding: 10px;}
+}
+.menu-close {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: 200px;
+  height: 200px;
+  background: rgba(250,130,70,1);
+  cursor: pointer;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+  -webkit-transform-origin: top right;
+  -moz-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -o-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.menu-close .menu-icon {
+  right: 15px; left: auto;top: 68px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.menu-close .bar {
+  background: rgba(250,250,250,1);
+  width: 100%;
+  height: 5px;
+  position:absolute;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+}
+.menu-close .bar:first-child {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.menu-close .bar:last-child {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+  </style>
+	</head>
+	<body >
+		<div id="loader" class="loader" style="width: 100%;height: 100%;
+			background: linear-gradient(to top, #4e54c8, #8f94fb);">
+			<svg class="loading" viewBox="-2000 -1000 4000 2000"  id="loader_icon">
+				<path id="inf" d="M354-354A500 500 0 1 1 354 354L-354-354A500 500 0 1 0-354 354z"></path>
+				<use xlink:href="#inf" stroke-dasharray="1570 5143" stroke-dashoffset="6713px"></use>
+			</svg>
+		</div>
+		<div id="container" class="container" style="display: none;">
+			<div class="progress">
+				<div id="completed" class="progress-bar" style="width: 0%;"></div>
+			</div>
+			<img class="logo" src="images/logo.svg" id="logo">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<audio id="audio">
+				<source type="type/mp3">
+			</audio>
+			<div class="mainBody" id="one" style="display: block;">
+				<div id="wrapper" class="my-super-cool-btn" onclick="startUnit3(this)">
+					<div class="dots-container">
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+					</div>
+					<span style="font-size: 35px;">START</span>
+				</div>
+			</div>
+			<div class="mainBody" id="two" style="display: none;">
+				<p id="title" style="top: 50%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+				</p>
+				<p id="content" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;">
+				</p>
+			</div>
+			<div class="mainBody" id="for_example" style="display: none;">
+				<p id="for_example_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">For example, 150,000,000,000 = 1.5 × 10<sup>11</sup>. Now, let us try to express 0.000007 m in standard form.
+				</p>
+				<p id="for_example_line_2" style="top: 55%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Similarly, consider the thickness of a piece of paper which is 0.0016 cm.
+				</p>
+				<p id="for_example_line_3" style="top: 70%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;"> 0.0016 = 16 &divide; 10000 = 1.6 × 10<sup>-3</sup>
+				</p>
+			</div>
+			<div class="mainBody" id="example_1" style="display: none;">
+				<p id="example_1_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 1;">Example 1</p>
+				<p id="example_1_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">Express in standard form 0.00009
+				</p>
+				<div id="example_1_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input id="example_1_b_1" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="9">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" maxlength="1" readonly value="-1">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-2">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-3">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-4">
+						<input id="example_1_b_2" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-5">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-6">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-7">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-8">
+					</div>
+				</div>
+				
+				<p id="example_1_line_2" style="top: 65%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">0.00009 = 9 × 10<sup>-5</sup>
+				</p>
+			</div>
+			<div class="mainBody" id="example_2" style="display: none;">
+				<p id="example_2_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 1;">Example 2</p>
+				<p id="example_2_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">Express in standard form 0.00000002
+				</p>
+				<div id="example_2_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+						<input id="example_2_b_1" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="2">
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" maxlength="1" readonly value="-1">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-2">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-3">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-4">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-5">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-6">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-7">
+						<input id="example_2_b_2" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-8">
+					</div>
+				</div>
+				
+				<p id="example_2_line_2" style="top: 65%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">0.00009 = 9 × 10<sup>-5</sup>
+				</p>
+			</div>
+			<div class="mainBody" id="example_3" style="display: none;">
+				<p id="example_3_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 1;">Example 3</p>
+				<p id="example_3_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">Express in standard form 0.00000003
+				</p>
+				<div id="example_3_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="0">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="0">
+						<input id="example_3_b_1" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="3">
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" maxlength="1" readonly value="-1">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-2">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-3">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-4">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-5">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-6">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-7">
+						<input id="example_3_b_2" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-8">
+					</div>
+				</div>
+				
+				<p id="example_3_line_2" style="top: 65%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">0.00000003 = 3 × 10<sup>-8</sup>
+				</p>
+			</div>
+			<div class="mainBody" id="exercise_1" style="display: none;">
+				<p id="exercise_1_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Exercise 1</p>
+				<p id="exercise_1_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">Express in standard form 0.00007
+				</p>
+				<div id="exercise_1_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;margin-left: 20px;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input id="exercise_1_b_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_1_b_2" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_1_b_3" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_1_b_4" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_1_b_5" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  value="0">
+						<input id="exercise_1_b_6" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_1_b_7" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_1_b_8" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<div id="exercise_1_b_result" style="width: 40px;height: 40px;margin-top: 20px;"></div>
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" maxlength="1" readonly value="-1">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-2">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-3">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-4">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-5">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-6">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-7">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-8">
+					</div>
+				</div>
+				<div id="exercise_1_r" style="color:white;width: 100px;height:40px;text-align: center;top: 65%;left: 50%;transform: translate(-50%,-50%);position: absolute;font-size: xx-large;opacity: 0;">7 × 10 
+								<input maxlength="2" id="exercise_1_r_1" style="height: 20px;width: 30px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+								<div id="exercise_1_result" style="width: 40px;height: 40px;margin-top: 20px;margin-top: -40px;margin-left: 120px;"></div>
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 80%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise1()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_2" style="display: none;">
+				<p id="exercise_2_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Exercise 2</p>
+				<p id="exercise_2_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">Express in standard form 0.000003
+				</p>
+				<div id="exercise_2_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;margin-left: 20px;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input id="exercise_2_b_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_2_b_2" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_2_b_3" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_2_b_4" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_2_b_5" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  value="0">
+						<input id="exercise_2_b_6" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_2_b_7" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_2_b_8" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<div id="exercise_2_b_result" style="width: 40px;height: 40px;margin-top: 20px;"></div>
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" maxlength="1" readonly value="-1">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-2">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-3">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-4">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-5">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-6">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-7">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-8">
+					</div>
+				</div>
+				<div id="exercise_2_r" style="color:white;width: 100px;height:40px;text-align: center;top: 65%;left: 50%;transform: translate(-50%,-50%);position: absolute;font-size: xx-large;opacity: 0;">3 × 10 
+								<input maxlength="2" id="exercise_2_r_1" style="height: 20px;width: 30px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+								<div id="exercise_2_result" style="width: 40px;height: 40px;margin-top: 20px;margin-top: -40px;margin-left: 120px;"></div>
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 80%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise2()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_3" style="display: none;">
+				<p id="exercise_3_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Exercise 3</p>
+				<p id="exercise_3_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">Express in standard form 0.00000009
+				</p>
+				<div id="exercise_3_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;margin-left: 20px;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input id="exercise_3_b_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_3_b_2" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_3_b_3" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_3_b_4" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_3_b_5" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  value="0">
+						<input id="exercise_3_b_6" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_3_b_7" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_3_b_8" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<div id="exercise_3_b_result" style="width: 40px;height: 40px;margin-top: 20px;"></div>
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" maxlength="1" readonly value="-1">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-2">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-3">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-4">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-5">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-6">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-7">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-8">
+					</div>
+				</div>
+				<div id="exercise_3_r" style="color:white;width: 100px;height:40px;text-align: center;top: 65%;left: 50%;transform: translate(-50%,-50%);position: absolute;font-size: xx-large;opacity: 0;">9 × 10 
+								<input maxlength="2" id="exercise_3_r_1" style="height: 20px;width: 30px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+								<div id="exercise_3_result" style="width: 40px;height: 40px;margin-top: 20px;margin-top: -40px;margin-left: 120px;"></div>
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 80%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise3()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_4" style="display: none;">
+				<p id="exercise_4_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Exercise 4</p>
+				<p id="exercise_4_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">Express in standard form 0.0000000001
+				</p>
+				<div id="exercise_4_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;margin-left: 20px;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input id="exercise_4_b_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_4_b_2" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_4_b_3" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_4_b_4" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_4_b_5" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"  value="0">
+						<input id="exercise_4_b_6" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_4_b_7" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_4_b_8" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_4_b_9" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<input id="exercise_4_b_10" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" value="0">
+						<div id="exercise_4_b_result" style="width: 40px;height: 40px;margin-top: 20px;"></div>
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" maxlength="1" readonly value="-1">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-2">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-3">
+						<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="-4">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-5">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-6">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-7">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-8">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-9">
+						<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="-10">
+					</div>
+				</div>
+				<div id="exercise_4_r" style="color:white;width: 100px;height:40px;text-align: center;top: 65%;left: 50%;transform: translate(-50%,-50%);position: absolute;font-size: xx-large;opacity: 0;">9 × 10 
+								<input maxlength="3" id="exercise_4_r_1" style="height: 20px;width: 30px;background: transparent;font-size: 18px;border: 0px;position: fixed;border-bottom: 2px dotted white;text-align: center;">
+								<div id="exercise_4_result" style="width: 40px;height: 40px;margin-top: 20px;margin-top: -40px;margin-left: 120px;"></div>
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 80%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise4()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="home_work" style="display: none;">
+				<p id="home_work_title" style="top: 20%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Home work for Students
+				</p>
+				<p id="home_work_questions" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+					i. Express in standard form 0.00000000011<br>
+					ii. Express in standard form 0.000000000123<br>
+					iii. Express in standard form 0.00000001234<br>
+					iii. Express in standard form 0.00001212<br>
+				</p>
+			</div>
+			<div class="mainBody" id="end_of_period" style="display: none;padding: 30px;">
+				<p id="end_of_period_title" class="center" style="top: 50%;font-size: xxx-large;opacity: 1;border-top: 2px solid white;border-bottom: 2px solid white;animation: fadeIn 2s;text-align: center;">END OF THE PERIOD</p>
+			</div>
+			<div class="footer">
+				<div id="button">
+					<svg
+						viewBox="0 0 40 40" width="40px" height="40px">
+						<path
+							id="path"
+							d="M 5 20 L 20 5 L 35 20"
+							fill="none"
+							stroke="#FFFFFF"
+							stroke-width="5"
+							stroke-linecap="round"
+							stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div id="container">
+					<div id="cont" style="background: grey;">
+						<div class="footer_center">
+							<h3>Rani Channamma University,<br>Belagavi</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu-outer">
+		    <div class="menu-icon">
+		        <div class="bar"></div>
+		        <div class="bar"></div>
+		        <div class="bar"></div>
+		    </div>
+		    <nav>
+		        <ul>
+		           <li><a href="#">Articles</a></li>
+		           <li><a href="#">Projects</a></li>
+		           <li><a href="#">About</a></li> 
+		            <li><a href="#">Contact</a></li>
+		       </ul>
+		   </nav>
+		</div>
+		<a class="menu-close" onClick="return true">
+		    <div class="menu-icon">
+		        <div class="bar"></div>
+		        <div class="bar"></div>
+		    </div>
+		</a>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/period3.js"></script>
+</html>

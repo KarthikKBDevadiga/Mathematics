@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Controller</title>
+</head>
+<body style="background: black;">
+	<div style="display: flex;position: absolute;left: 50%;transform: translateX(-50%);top: 16px;">
+				<div class="icon previous ripple" onclick="previous(this)"></div>
+		  		<div onclick="playPause(this)" class="icon pauseToPlay ripple"></div>
+		  		<div class="icon next ripple" onclick="nextSkip(this)"></div>		
+			</div>
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var isPlay = false;
+	function playPause(b){
+		if(isPlay){
+			b.classList='icon playToPause playPauseAnimate ripple';
+		 	b.style.webkitAnimation = 'none';
+		    setTimeout(function() {
+		        b.style.webkitAnimation = '';
+		    }, 10);
+		    setTimeout(function(){
+		    	b.classList ='icon pauseToPlay ripple';
+		    },300);	
+		    isPlay = false;		
+		}else{
+			isPlay = true;
+			b.classList='icon pauseToPlay playPauseAnimate ripple';
+		 	b.style.webkitAnimation = 'none';
+		    setTimeout(function() {
+		        b.style.webkitAnimation = '';
+		    }, 10);
+
+		    setTimeout(function(){
+		    	b.classList ='icon playToPause ripple';
+		    },300);
+		}
+		if ('vibrate' in navigator) {
+			navigator.vibrate(50);
+		} 
+	}
+
+	function nextSkip(b){
+		b.style.webkitAnimation = 'none';
+		setTimeout(function() {
+			b.style.webkitAnimation = '';
+		}, 10);
+		if ('vibrate' in navigator) {
+			navigator.vibrate(50);
+		} 
+	}
+
+	function previous(b){
+		b.style.webkitAnimation = 'none';
+		setTimeout(function() {
+			b.style.webkitAnimation = '';
+		}, 10);
+		if ('vibrate' in navigator) {
+			navigator.vibrate(50);
+		} 
+	}
+</script>
+</html>

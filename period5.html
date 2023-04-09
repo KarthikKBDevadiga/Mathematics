@@ -1,0 +1,244 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.7,user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#9FA8DA">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9FA8DA">
+		<link rel="shortcut icon" href="images/rcu.svg">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/loading.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/bg-anim.css">
+		<link rel="stylesheet" type="text/css" href="css/btn-go.css">
+		<link rel="stylesheet" type="text/css" href="css/svg_animation.css">
+		<link rel="stylesheet" type="text/css" href="css/controller.css">
+		<link rel="stylesheet" type="text/css" href="css/ripple.css">
+		<title>Period 5</title>
+	</head>
+	<body >
+		<div id="loader" class="loader" style="width: 100%;height: 100%;
+			background: linear-gradient(to top, #4e54c8, #8f94fb);">
+			<svg class="loading" viewBox="-2000 -1000 4000 2000"  id="loader_icon">
+				<path id="inf" d="M354-354A500 500 0 1 1 354 354L-354-354A500 500 0 1 0-354 354z"></path>
+				<use xlink:href="#inf" stroke-dasharray="1570 5143" stroke-dashoffset="6713px"></use>
+			</svg>
+		</div>
+		<div id="container" class="container" style="display: none;">
+			<div class="progress">
+				<div id="completed" class="progress-bar" style="width: 0%;"></div>
+			</div>
+			<img class="logo" src="images/logo.svg" id="logo">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<audio id="audio">
+				<source type="type/mp3">
+			</audio>
+			<div class="mainBody" id="one" style="display: block;">
+				<div id="wrapper" class="my-super-cool-btn" onclick="startUnit5(this)">
+					<div class="dots-container">
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+					</div>
+					<span style="font-size: 35px;">START</span>
+				</div>
+			</div>
+			<div class="mainBody" id="two" style="display: none;">
+				<p id="title" style="top: 50%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+				</p>
+				<p id="content" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;">
+				</p>
+			</div>
+			<div class="mainBody" id="inverse_proportion" style="display: none;">
+				<div id="inverse_proportion_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 200px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" readonly value="Price of each book">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" readonly value="40">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" readonly value="50">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" readonly value="60">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" readonly value="75">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" readonly value="80">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" readonly value="100">
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 200px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" readonly value="Books bought">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" readonly value="150">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" readonly value="120">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" readonly value="100">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" readonly value="80">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" readonly value="75">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" readonly value="60">
+					</div>
+				</div>
+			</div>
+			<div class="mainBody" id="example_1" style="display: none;">
+				<p id="example_1_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Example 1</p>
+				<p id="example_1_line_1" style="top: 30%;font-size: xx-large;text-align: center;color: white;position: absolute;padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">Number of spokes in a wheel</p>
+				<div id="example_1_b" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: large;">
+						<input style="width: 200px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="x1">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="x2">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="x3">
+						
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x4">
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 200px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-top-width: 0px;font-size: large;" maxlength="1" readonly value="Number of spokes">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="4">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="6">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="12">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="18">
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 200px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-top-width: 0px;font-size: large;" maxlength="1" readonly value="Angle">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="90">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="60">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="30">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="20">
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: large;">
+						<input style="width: 200px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border: 2px solid white;border-top-width: 0px;" maxlength="1" readonly value="">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="y1">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="y2">
+						<input style="width: 50px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly value="y3">
+						<input style="width: 50px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1"  readonly value="y4">
+					</div>
+				</div>
+			</div>
+			<div class="mainBody" id="example_2" style="display: none;">
+				<p id="example_2_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Example 2</p>
+				<p id="example_2_line_1" style="top: 25%;font-size: xx-large;text-align: center;color: white;position: absolute;padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">4 pipes to fill a tank in 1 hour 20 min. how long will it take if only same two pipes are used?</p>
+				<div id="example_2_b_1" style="position: absolute;top:40%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 200px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;font-size: large;border-top-left-radius: 5px;" maxlength="1" readonly="" value="Number of pipes">
+						<input style="width: 70px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly="" value="4(x1)">
+						<input style="width: 70px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;border-left-width: 0px;border-top-right-radius: 5px;" maxlength="1" readonly="" value="2(x2)">
+					</div>
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<input style="width: 200px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-top-width: 0px;font-size: large;border-bottom-left-radius: 5px;" maxlength="1" readonly="" value="Time in min">
+						<input style="width: 70px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;" maxlength="1" readonly="" value="80(y1)">
+						<input style="width: 70px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;border-left-width: 0px;border-top-width: 0px;border-bottom-right-radius: 5px;" maxlength="1" readonly="" value="x(y2)">
+					</div>
+				</div>
+				<div id="example_2_b_2" style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;font-size: x-large;">
+						<div style="width: 40px;height: 120px;">
+							<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="4"	>
+							<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;margin-top: 40px;border-radius: 5px;" maxlength="1" readonly value="2">
+						</div>
+						<div class="cross_arrow play" style="margin-top: 20px;margin-left: 10px;margin-right: 10px;"></div>
+						<div style="width: 40px;height: 120px;" readonly value="x">
+							<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="x">
+							<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;margin-top: 40px;border-radius: 5px;" maxlength="1" readonly value="80">
+						</div> 
+					</div>
+				</div>
+				<p id="example_2_line_2" style="top: 65%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">4 × 80 = x × 2
+				</p>
+				<p id="example_2_line_3" style="top: 75%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">x = 320/2
+				</p>
+				<p id="example_2_line_4" style="top: 85%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">x = 160
+				</p>
+			</div>
+			<div class="mainBody" id="exercise_1" style="display: none;font-size: x-large;">
+				<p id="exercise_1_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Exercise 1</p>
+				<p id="exercise_1_line_1" style="top: 25%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">4 pipes to fill a tank in 1 hour 30 min. how long will it take if only same 3 pipes are used</p>
+				<div id="exercise_1_b_1" style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;margin-left: 40px;">
+						<div style="width: 40px;height: 120px;">
+							<input id="exercise_1_b_1_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border-radius: 5px;border: 2px solid white;" maxlength="2">
+							<input id="exercise_1_b_1_2" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;margin-top: 40px;border-radius: 5px;" maxlength="2">
+						</div>
+						<div class="cross_arrow play" style="margin-top: 20px;margin-left: 10px;margin-right: 10px;"></div>
+						<div style="width: 40px;height: 120px;">
+							<input id="exercise_1_b_1_3" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border-radius: 5px;border: 2px solid white;" maxlength="2">
+							<input id="exercise_1_b_1_4" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;margin-top: 40px;border-radius: 5px;" maxlength="2">
+						</div> 
+						<div id="exercise_1_b_1_result" style="width: 40px;height: 40px;margin-top: 40px;"></div>
+					</div>
+				</div>
+				<div id="exercise_1_line_2" style="top: 65%;left:50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translate(-50%,-50%);opacity:0;display: flex;margin-left: 20px;"><p>4 × 90 = x × </p><input id="exercise_1_b_2" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;border-radius: 5px;font-size: x-large;margin-left: 10px;" maxlength="1">
+					<div id="exercise_1_b_2_result" style="width: 40px;height: 40px;"></div>
+				</div>
+				<div id="exercise_1_line_3" style="top: 75%;left:50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translate(-50%,-50%);opacity:0;display: flex;margin-left: 20px;"><p>x = </p><input id="exercise_1_b_3" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;border-radius: 5px;font-size: x-large;margin-left: 10px;" maxlength="3">
+					<div id="exercise_1_b_3_result" style="width: 40px;height: 40px;"></div>
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise1()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_2" style="display: none;font-size: x-large;">
+				<p id="exercise_2_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Exercise 2</p>
+				<p id="exercise_2_line_1" style="top: 25%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity:0;">3 pipes to fill a tank in 1 hour. how long will it take if only same 2 pipes are used</p>
+				<div id="exercise_2_b_1" style="position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);opacity: 0;">
+					<div style="display:flex;color:white;height:40px;text-align: center;margin-left: 40px;">
+						<div style="width: 40px;height: 120px;">
+							<input id="exercise_2_b_1_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border-radius: 5px;border: 2px solid white;" maxlength="2">
+							<input id="exercise_2_b_1_2" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;margin-top: 40px;border-radius: 5px;" maxlength="2">
+						</div>
+						<div class="cross_arrow play" style="margin-top: 20px;margin-left: 10px;margin-right: 10px;"></div>
+						<div style="width: 40px;height: 120px;">
+							<input id="exercise_2_b_1_3" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border-radius: 5px;border: 2px solid white;" maxlength="2">
+							<input id="exercise_2_b_1_4" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;margin-top: 40px;border-radius: 5px;" maxlength="2">
+						</div> 
+						<div id="exercise_2_b_1_result" style="width: 40px;height: 40px;margin-top: 40px;"></div>
+					</div>
+				</div>
+				<div id="exercise_2_line_2" style="top: 65%;left:50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translate(-50%,-50%);opacity:0;display: flex;margin-left: 20px;"><p>3 × 60 = x × </p><input id="exercise_2_b_2" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;border-radius: 5px;font-size: x-large;margin-left: 10px;" maxlength="1">
+					<div id="exercise_2_b_2_result" style="width: 40px;height: 40px;"></div>
+				</div>
+				<div id="exercise_2_line_3" style="top: 75%;left:50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translate(-50%,-50%);opacity:0;display: flex;margin-left: 20px;"><p>x = </p><input id="exercise_2_b_3" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 2px solid white;border-radius: 5px;font-size: x-large;margin-left: 10px;" maxlength="3">
+					<div id="exercise_2_b_3_result" style="width: 40px;height: 40px;"></div>
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise2()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="home_work" style="display: none;">
+				<p id="home_work_title" style="top: 20%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Home work for Students
+				</p>
+				<p id="home_work_questions" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+					i. 15 men can build a wall in 42 hours, how many workers will be required for the same work in 30 hours?<br>
+					ii. Six pumps working together empty a tank in 28 minutes. How long will it take to empty the tank if 4 such pumps are working together?<br>
+				</p>
+			</div>
+			<div class="mainBody" id="end_of_period" style="display: none;padding: 30px;">
+				<p id="end_of_period_title" class="center" style="top: 50%;font-size: xxx-large;opacity: 1;border-top: 2px solid white;border-bottom: 2px solid white;animation: fadeIn 2s;text-align: center;">END OF THE PERIOD</p>
+			</div>
+			<div class="footer">
+				<div id="button">
+					<svg
+						viewBox="0 0 40 40" width="40px" height="40px">
+						<path
+							id="path"
+							d="M 5 20 L 20 5 L 35 20"
+							fill="none"
+							stroke="#FFFFFF"
+							stroke-width="5"
+							stroke-linecap="round"
+							stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div id="container">
+					<div id="cont" style="background: grey;">
+						<div class="footer_center">
+							<h3>Rani Channamma University,<br>Belagavi</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/period5.js"></script>
+</html>

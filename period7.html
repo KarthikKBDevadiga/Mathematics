@@ -1,0 +1,285 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.7,user-scalable=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#9FA8DA">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#9FA8DA">
+		<link rel="shortcut icon" href="images/rcu.svg">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/loading.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/bg-anim.css">
+		<link rel="stylesheet" type="text/css" href="css/btn-go.css">
+		<link rel="stylesheet" type="text/css" href="css/svg_animation.css">
+		<link rel="stylesheet" type="text/css" href="css/controller.css">
+		<link rel="stylesheet" type="text/css" href="css/ripple.css">
+		<title>Period 7</title>
+	</head>
+	<body >
+		<div id="loader" class="loader" style="width: 100%;height: 100%;
+			background: linear-gradient(to top, #4e54c8, #8f94fb);">
+			<svg class="loading" viewBox="-2000 -1000 4000 2000"  id="loader_icon">
+				<path id="inf" d="M354-354A500 500 0 1 1 354 354L-354-354A500 500 0 1 0-354 354z"></path>
+				<use xlink:href="#inf" stroke-dasharray="1570 5143" stroke-dashoffset="6713px"></use>
+			</svg>
+		</div>
+		<div id="container" class="container" style="display: none;">
+			<div class="progress">
+				<div id="completed" class="progress-bar" style="width: 0%;"></div>
+			</div>
+			<img class="logo" src="images/logo.svg" id="logo">
+			<ul class="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<audio id="audio">
+				<source type="type/mp3">
+			</audio>
+			<div class="mainBody" id="one" style="display: block;">
+				<div id="wrapper" class="my-super-cool-btn" onclick="startUnit7(this)">
+					<div class="dots-container">
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+						<div class="dot"></div>
+					</div>
+					<span style="font-size: 35px;">START</span>
+				</div>
+			</div>
+			<div class="mainBody" id="two" style="display: none;">
+				<p id="title" style="top: 50%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+				</p>
+				<p id="content" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;">
+				</p>
+			</div>
+			<div class="mainBody" id="example_1" style="display: none;">
+				<p id="example_1_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Example 1</p>
+				<p id="example_1_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">The factors of 5xy will be 5, x and y
+				</p>
+				<div  style="top: 60%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+					<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input id="example_1_r" style="opacity:0;background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 50px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="5xy">
+						<div id="example_1_a"  class="three_headed_arrow play" style="opacity:0;margin-left:-40px;margin-right: auto;"></div>
+						<div id="example_1_l"  style="opacity:0;width: 200px;margin-left: -40px;margin-right: auto;">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="5">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="x">   
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="y">   
+						</div>
+					</div>
+					
+				</div>
+				<p id="example_1_line_2" style="top: 80%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">5,x and y are the factors of 5xy
+				</p>
+			</div>
+			<div class="mainBody" id="example_2" style="display: none;">
+				<p id="example_2_title" class="center" style="top: 20%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Example 2</p>
+				<p id="example_2_line_1" style="top: 35%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">The factors of 3x(x + 2) will be 3, x and (x + 2).
+				</p>
+				<div  style="top: 60%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+					<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input id="example_2_r" style="opacity:0;background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 100px;height:40px;text-align: center;" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="3x(x+2)">
+						<div id="example_2_a"  class="three_headed_arrow play" style="opacity:0;margin-left:-40px;margin-right: auto;"></div>
+						<div id="example_2_l"  style="opacity:0;width: 210px;margin-left: -40px;margin-right: auto;">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="3">
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="x">   
+							<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left:36px;border-radius: 5px;width: 50px;height:40px;text-align: center;" maxlength="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="x+2">   
+						</div>
+					</div>
+					
+				</div>
+				<p id="example_2_line_2" style="top: 80%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">3,x and (x+2) are the factors of 3x(x+2)
+				</p>
+			</div>
+			<div class="mainBody" id="example_3" style="display: none;">
+				<p id="example_3_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Example 3</p>
+				<p id="example_3_line_1" style="top: 20%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Factorise 12a<sup>2</sup>b + 15ab<sup>2</sup>
+				</p>
+				<div id="example_3_b_1" style="display:flex;color:white;height:40px;text-align: center;opacity: 0;position: absolute;top: 30%;left: 50%;transform: translate(-50%,-50%);font-size: x-large;">
+					<p style="width: 100px">12a<sup>2</sup>b = </p>
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="2">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="3">
+					<input id="example_3_b_1_c_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="3">
+					<input id="example_3_b_1_c_2" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="a">
+					<input id="example_3_b_1_c_3" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="b">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="a">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="">
+				</div>
+				<div id="example_3_b_2" style="display:flex;color:white;height:40px;text-align: center;opacity: 0;position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);font-size: x-large;">
+					<p style="width: 100px">15ab<sup>2</sup> = </p>
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="5">
+					<input id="example_3_b_2_c_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="3">
+					<input id="example_3_b_2_c_2" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="a">
+					<input id="example_3_b_2_c_3" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="b">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="b">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="">
+				</div>
+				<p id="example_3_line_2" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">The two terms have 3, a and b as common factors.
+				</p>
+				<p id="example_3_line_3" style="top: 60%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">12a<sup>2</sup>b + 15ab<sup>2</sup> = (3 × a × b × 2 × 2 × a) + (3 × a × b × 5 × b)
+				</p>
+				<p id="example_3_line_4" style="top: 70%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;"> = 3 × a × b × [(2 × 2 × a) + (5 × b)]
+				</p>
+				<p id="example_3_line_5" style="top: 80%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;"> = 3ab × (4a + 5b) 
+				</p>
+
+				<p id="example_3_line_6" style="top: 90%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;"> = 3ab (4a + 5b) (required factor form)
+				</p>
+			</div>
+			<div class="mainBody" id="example_4" style="display: none;">
+				<p id="example_4_title" class="center" style="top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;opacity: 0;">Example 4</p>
+				<p id="example_4_line_1" style="top: 20%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Factorise 10x<sup>2</sup> - 18x<sup>3</sup> + 14x<sup>4</sup></sup>
+				</p>
+				<div id="example_4_b_1" style="display:flex;color:white;height:40px;text-align: center;opacity: 0;position: absolute;top: 30%;left: 50%;transform: translate(-50%,-50%);font-size: x-large;">
+					<p style="width: 100px">10x<sup>2</sup> = </p>
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="5">
+					<input id="example_4_b_1_c_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="2">
+					<input id="example_4_b_1_c_2" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+					<input id="example_4_b_1_c_3" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="">
+				</div>
+				<div id="example_4_b_2" style="display:flex;color:white;height:40px;text-align: center;opacity: 0;position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);font-size: x-large;">
+					<p style="width: 100px">18x<sup>3</sup> = </p>
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="3">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="3">
+					<input id="example_4_b_2_c_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="2">
+					<input id="example_4_b_2_c_2" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+					<input id="example_4_b_2_c_3" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="">
+				</div>
+				<div id="example_4_b_3" style="display:flex;color:white;height:40px;text-align: center;opacity: 0;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);font-size: x-large;">
+					<p style="width: 100px">14x<sup>4</sup> = </p>
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border: 2px solid white;" maxlength="1" readonly value="">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="">
+					<input style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="7">
+					<input id="example_4_b_3_c_1" style="width: 40px;height: 40px;background: #0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1" readonly value="2">
+					<input id="example_4_b_3_c_2" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+					<input id="example_4_b_3_c_3" style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+					<input style="width: 40px;height: 40px;background:#0000FF66;text-align: center;border: 0px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 2px solid white;border-left-width: 0px;" maxlength="1"  readonly value="x">
+				</div>
+				<p id="example_4_line_2" style="top: 60%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">The common factors of the three terms are 2, x and x
+				</p>
+				<p id="example_4_line_3" style="top: 70%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">10x<sup>2</sup> - 18x<sup>3</sup> + 14x<sup>4</sup></sup>
+				</p>
+				<p id="example_4_line_4" style="top: 80%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;"> = 2 × x × x × [(5-(3 × 3 × x)) + (7 × x × x)]
+				</p>
+				<p id="example_4_line_5" style="top: 90%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;"> = 2x<sup>2</sup> × (7x<sup>2</sup> - 9x + 5)
+				</p>
+			</div>
+
+			<div class="mainBody" id="exercise_1" style="display: none;padding: 30px;">
+				<p id="exercise_1_title" class="center" style="opacity:0;top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 1</p>
+				<div id="exercise_1_block" style="opacity:0;top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+					<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 60px;height:40px;text-align: center;"  oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="3mn">
+						<div class="three_headed_arrow play" style="margin-left:-40px;margin-right: auto;"></div>
+						<div style="width: fit-content;margin-left: -80px;margin-right: auto;display: flex;">
+							<div id="exercise_1_l_1_result" style="width: 40px;height: 40px;"></div>
+							<input id="exercise_1_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1">
+							<input id="exercise_1_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" >
+							<div id="exercise_1_l_2_result" style="width: 40px;height: 40px;margin-top: 40px;margin-left: -40px;"></div>
+							<input id="exercise_1_l_3" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" >
+							<div id="exercise_1_l_3_result" style="width: 40px;height: 40px;"></div>
+						</div>
+					</div>
+					
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise1()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="exercise_2" style="display: none;padding: 30px;">
+				<p id="exercise_2_title" class="center" style="opacity:0;top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 2</p>
+				<div id="exercise_2_block" style="opacity:0;top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+					<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 60px;height:40px;text-align: center;" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="xyz">
+						<div class="three_headed_arrow play" style="margin-left:-40px;margin-right: auto;"></div>
+						<div style="width: fit-content;margin-left: -80px;margin-right: auto;display: flex;">
+							<div id="exercise_2_l_1_result" style="width: 40px;height: 40px;"></div>
+							<input id="exercise_2_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1">
+							<input id="exercise_2_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" >
+							<div id="exercise_2_l_2_result" style="width: 40px;height: 40px;margin-top: 40px;margin-left: -40px;"></div>
+							<input id="exercise_2_l_3" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="1" >
+							<div id="exercise_2_l_3_result" style="width: 40px;height: 40px;"></div>
+						</div>
+					</div>
+					
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise2()">Evaluate</button>
+			</div>
+			</div>
+			<div class="mainBody" id="exercise_3" style="display: none;padding: 30px;">
+				<p id="exercise_3_title" class="center" style="opacity:0;top: 10%;font-size: xx-large;border-top: 2px solid white;border-bottom: 2px solid white;">Exercise 2</p>
+				<div id="exercise_3_block" style="opacity:0;top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);display:flex;font-size: 20px;left: 50%;transform: translate(-50%,-50%);">
+					<div  style="width: 180px;padding-left: 30px;padding-right: 30px; padding-top: 15px;padding-bottom: 15px;">
+						<input style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 80px;height:40px;text-align: center;" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" readonly value="3y(x+4)">
+						<div class="three_headed_arrow play" style="margin-left:-40px;margin-right: auto;"></div>
+						<div style="width: fit-content;margin-left: -80px;margin-right: auto;display: flex;">
+							<div id="exercise_3_l_1_result" style="width: 40px;height: 40px;"></div>
+							<input id="exercise_3_l_1" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="3">
+							<input id="exercise_3_l_2" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="3" >
+							<div id="exercise_3_l_2_result" style="width: 40px;height: 40px;margin-top: 40px;margin-left: -40px;"></div>
+							<input id="exercise_3_l_3" style="background: rgba(0,0,255,0.3);color:white;border: 2px solid white;margin-left: 40px;border-radius: 5px;width: 40px;height:40px;text-align: center;" maxlength="3" >
+							<div id="exercise_3_l_3_result" style="width: 40px;height: 40px;"></div>
+						</div>
+					</div>
+					
+				</div>
+				<button type="button" class="btn btn-primary" style="position:absolute; font-size: x-large;top: 90%;left: 50%;transform: translate(-50%,-50%);" onclick="evaluateExercise3()">Evaluate</button>
+			</div>
+			<div class="mainBody" id="home_work" style="display: none;">
+				<p id="home_work_title" style="top: 20%;font-size: xxx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">Home work for Students
+				</p>
+				<p id="home_work_questions" style="top: 50%;font-size: xx-large;text-align: center;color: white;position: absolute;	padding: 10px;transform: translateY(-50%);width: 100%;opacity: 0;">
+					i. Find out the factors of 2a(z + 1)<br>
+					ii. Find out the factors of 2ab(c + b + 1)<br>
+					iii. Find out the factors of 12a<sup>2</sup>b + 15ab<sup>2</sup><br>
+				</p>
+				
+			</div>
+			<div class="mainBody" id="end_of_period" style="display: none;padding: 30px;">
+				<p id="end_of_period_title" class="center" style="top: 50%;font-size: xxx-large;opacity: 1;border-top: 2px solid white;border-bottom: 2px solid white;animation: fadeIn 2s;text-align: center;">END OF THE PERIOD</p>
+			</div>
+			<div class="footer">
+				<div id="button">
+					<svg
+						viewBox="0 0 40 40" width="40px" height="40px">
+						<path
+							id="path"
+							d="M 5 20 L 20 5 L 35 20"
+							fill="none"
+							stroke="#FFFFFF"
+							stroke-width="5"
+							stroke-linecap="round"
+							stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div id="container">
+					<div id="cont" style="background: grey;">
+						<div class="footer_center">
+							<h3>Rani Channamma University,<br>Belagavi</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/period7.js"></script>
+</html>

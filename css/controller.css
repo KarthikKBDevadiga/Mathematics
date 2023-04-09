@@ -1,0 +1,63 @@
+@keyframes playPauseAnimation {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -864px 0px;
+  }
+}
+.icon{
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+}
+
+.pauseToPlay {
+  background-image: url(../images/svg/pause_to_play.svg);
+    
+}
+
+.playPauseAnimate {
+  animation-name: playPauseAnimation;
+  animation-duration:300ms;
+  animation-timing-function: steps(18);
+}
+
+.playToPause {
+  background-image: url(../images/svg/play_to_pause.svg);
+}
+
+@keyframes nextAnimation {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -432px 0px;
+  }
+}
+.next {
+  background-image: url(../images/svg/next.svg);
+  animation-duration: 300ms;
+  animation-timing-function: steps(9);
+}
+.nextAnimate {
+  animation-name: nextAnimation;
+}
+
+@keyframes previousAnimation {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -864px 0px;
+  }
+}
+.previous {
+  background-image: url(../images/svg/previous.svg);
+  animation-duration: 300ms;
+  animation-timing-function: steps(18);
+}
+.previousAnimate {
+  animation-name: previousAnimation;
+}
+
